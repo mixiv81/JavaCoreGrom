@@ -8,7 +8,7 @@ public class Arithmetic {
         for (int i = 0; i < array.length; i++) {
             if (array[i] > array[max])
                 max = i;
-            if (array[i] < array[min])
+            else if (array[i] < array[min])
                 min = i;
         }
         return array[max] + array[min] > 100;
