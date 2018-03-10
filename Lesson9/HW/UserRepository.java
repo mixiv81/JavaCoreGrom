@@ -74,4 +74,25 @@ public class UserRepository {
             }
         return null;
     }
+
+    private User findById(long id) {
+        if (users != null)
+            for (int i = 0; i < countArrInd(); i++) {
+                if (users[i] != null && users[i].getId() == id)
+                    return users[i];
+            }
+        return null;
+    }
+
+    public User save(User user) {
+        if (findById(user.getId()) == null)
+            for (User us : users) {
+                if (us != null && us == user) {
+                    continue;
+                }
+                us = user;
+                return us;
+            }
+        return null;
+    }
 }

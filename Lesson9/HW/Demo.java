@@ -5,5 +5,6 @@ public class Demo {
         User user = new User(5, "Ihor", "55");
 
         User[] users = new User[4];
+        System.out.println();
     }
 }
