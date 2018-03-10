@@ -11,38 +11,40 @@ public class UserRepository {
         return users;
     }
 
-    public String[] getUserNames() {
-        if (users == null || users.length == 0)
-            return null;
-        String[] arr = new String[users.length];
-        for (int i = 0; i < users.length; i++) {
-            if (users[i] != null)
-                arr[i] = users[i].getName();
-            i++;
+    private int countArrInd() {
+        int countIn = 0;
+        for (User user : users) {
+            if (user != null)
+                countIn++;
         }
-        return arr;
+        return countIn;
+    }
+
+    public String[] getUserNames() {
+        String[] arrName = new String[countArrInd()];
+        for (int i = 0; i < countArrInd(); i++) {
+            if (users[i] != null)
+                arrName[i] = users[i].getName();
+        }
+        return arrName;
     }
 
     public long[] getUserIds() {
-        if (users == null || users.length == 0)
-            return null;
-        long[] arr = new long[users.length];
-        for (int i = 0; i < users.length; i++) {
+        long[] arrId = new long[countArrInd()];
+        for (int i = 0; i < countArrInd(); i++) {
             if (users[i] != null)
-                arr[i] = users[i].getId();
-            i++;
+                arrId[i] = users[i].getId();
         }
-        return arr;
+        return arrId;
     }
 
-    public User getUserNameById(long id) {
-        if (users == null || users.length == 0)
-            return null;
-        int ind = 0;
-        for (int i = 0; i < users.length; i++) {
-            if (users[i] == null || users[i].getId() != id)
-                ind++;
-        }
-        return users[ind];
+    public String getUserNameById(long id) {
+        String name = null;
+        if (users != null)
+            for (int i = 0; i < countArrInd(); i++) {
+                if (users[i] != null && users[i].getId() == id)
+                    name = users[i].getName();
+            }
+        return name;
     }
 }
