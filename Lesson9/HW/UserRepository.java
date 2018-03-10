@@ -89,7 +89,7 @@ public class UserRepository {
             for (User us : users) {
                 if (us == null) {
                     us = user;
-                    return us;
+                    return user;
                 }
             }
         }
