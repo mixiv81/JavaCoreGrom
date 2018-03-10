@@ -7,7 +7,7 @@ public class Course {
     String name;
     int hoursDuration;
     String teacherName;
-    Student [] students;
+    Student[] students;
 
     public Course(Date startDate, String name, int hoursDuration, String teacherName, Student[] students) {
         this.startDate = startDate;

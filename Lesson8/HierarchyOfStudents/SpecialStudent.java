@@ -1,6 +1,6 @@
 package Lesson8.HierarchyOfStudents;
 
-public class SpecialStudent extends CollegeStudent{
+public class SpecialStudent extends CollegeStudent {
     long secretKey;
     String email;
 

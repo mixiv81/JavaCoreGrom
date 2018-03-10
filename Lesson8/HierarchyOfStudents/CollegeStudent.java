@@ -1,6 +1,6 @@
 package Lesson8.HierarchyOfStudents;
 
-public class CollegeStudent extends Student{
+public class CollegeStudent extends Student {
     String collegeName;
     int rating;
     long id;

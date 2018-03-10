@@ -4,7 +4,7 @@ public class Student {
     String firstName;
     String lastName;
     int group;
-    Course [] coursesTaken;
+    Course[] coursesTaken;
     int age;
 
     public Student(String firstName, String lastName, int group, Course[] coursesTaken) {
