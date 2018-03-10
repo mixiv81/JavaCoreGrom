@@ -1,8 +1,8 @@
 package Lesson9.Employee;
 
 public class Company {
-    String name;
-    String countryFounded;
+    private String name;
+    private String countryFounded;
 
     protected String code;
 
