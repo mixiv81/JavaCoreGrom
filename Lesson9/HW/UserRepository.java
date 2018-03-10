@@ -95,4 +95,25 @@ public class UserRepository {
         }
         return null;
     }
-}
+
+    public User update(User user) {
+        if (findById(user.getId()) != null) {
+            for (int i = 0; i < users.length; i++) {
+                if (users[i].getId() == user.getId()) {
+                    users[i] = user;
+                    return users[i];
+                }
+            }
+        }
+        return null;
+    }
+
+    public void delete(long id) {
+        User user = findById(id);
+            for (int i = 0; i < users.length; i++) {
+                if (users[i] == user) {
+                    users[i] = null;
+                }
+            }
+        }
+    }
