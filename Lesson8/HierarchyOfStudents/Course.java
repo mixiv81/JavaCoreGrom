@@ -9,8 +9,8 @@ public class Course {
     String teacherName;
     Student [] students;
 
-    public Course(String name, int hoursDuration, String teacherName, Student[] students) {
-        this.startDate = new Date();
+    public Course(Date startDate, String name, int hoursDuration, String teacherName, Student[] students) {
+        this.startDate = startDate;
         this.name = name;
         this.hoursDuration = hoursDuration;
         this.teacherName = teacherName;
