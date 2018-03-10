@@ -47,4 +47,31 @@ public class UserRepository {
             }
         return name;
     }
+
+    public User getUserByName(String name) {
+        if (users != null)
+            for (int i = 0; i < countArrInd(); i++) {
+                if (users[i] != null && users[i].getName() == name)
+                    return users[i];
+            }
+        return null;
+    }
+
+    public User getUserById(long id) {
+        if (users != null)
+            for (int i = 0; i < countArrInd(); i++) {
+                if (users[i] != null && users[i].getId() == id)
+                    return users[i];
+            }
+        return null;
+    }
+
+    public User getUserBySessionId(String sessionId) {
+        if (users != null)
+            for (int i = 0; i < countArrInd(); i++) {
+                if (users[i] != null && users[i].getSessionId() == sessionId)
+                    return users[i];
+            }
+        return null;
+    }
 }
