@@ -14,37 +14,42 @@ public class UserRepository {
     public User findById(long id) {
         if (users != null)
             for (User user : users) {
-                if (user != null && user.getId() == id)
+                if (user.getId() == id)
                     return user;
             }
         return null;
     }
 
     public User save(User user) {
-        if (findById(user.getId()) == null)
+        if (findById(user.getId()) == null) {
             for (User userId : users) {
-                if (userId == null)
+                if (userId == null) {
                     userId = user;
-                return userId;
+                    return userId;
+                }
             }
+        }
         return null;
     }
 
     public User update(User user) {
-        if (findById(user.getId()) != null)
+        if (findById(user.getId()) != null) {
             for (User userId : users) {
-                if (userId.getId() == user.getId())
+                if (userId.getId() == user.getId()) {
                     userId = user;
-                return userId;
+                    return userId;
+                }
             }
+        }
         return null;
     }
 
     public void delete(long id) {
         User user = findById(id);
         for (User userId : users) {
-            if (userId == user)
+            if (userId == user) {
                 userId = null;
+            }
         }
     }
 }
