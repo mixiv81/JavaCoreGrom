@@ -31,7 +31,7 @@ public class Order {
     }
 
     boolean checkPrice() {
-        boolean priceDeal = price > 1000 ? true : false;
+        boolean priceDeal = price > 1000;
         return priceDeal;
     }
 
