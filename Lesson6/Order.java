@@ -1,5 +1,7 @@
 package Lesson6;
 
+import Lesson7.DemoHomeWork;
+
 import java.util.Date;
 
 public class Order {
@@ -25,17 +27,19 @@ public class Order {
     public Order() {
     }
 
-    void confirmOrder() {
-        isConfirmed = true;
-        dateConfirmed = new Date();
+   public void confirmOrder() {
+        if (!isConfirmed) {
+            isConfirmed = true;
+            dateConfirmed = new Date();
+        }
     }
 
-    boolean checkPrice() {
+    public boolean checkPrice() {
         boolean priceDeal = price > 1000;
         return priceDeal;
     }
 
-    boolean isValidType() {
+    public boolean isValidType() {
         String buy = "Buy";
         String sale = "Sale";
         if (buy == type)
