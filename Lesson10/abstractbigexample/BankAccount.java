@@ -1,6 +1,5 @@
 package Lesson10.abstractbigexample;
 
-import Lesson9.Employee.Employee;
 
 public class BankAccount {
     private Employee employee;
