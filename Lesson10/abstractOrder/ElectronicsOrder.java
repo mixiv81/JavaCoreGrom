@@ -17,11 +17,8 @@ public class ElectronicsOrder extends Order {
         String[] toCities = {"Kiev", "Odessa", "Dnepr", "Kharkov"};
         for (int i = 0; i < fromCities.length; i++) {
             for (int k = 0; k < toCities.length; k++) {
-                if (toCities[i] == getGetShipToCity() && fromCities[k] == getShipFromSity() && getBasePrice() > 100 && getCustomerOwned().getGender() == "Female") {
+                if (toCities[i] == getGetShipToCity() && fromCities[k] == getShipFromSity() && getBasePrice() > 100 && getCustomerOwned().getGender() == "Female")
                     System.out.println("Ваш заказ " + getItemName() + ". Ваша гарантия " + guaranteeMonths + " месяца " + ". Дата подтверждения " + getDateConfirmed());
-                } else
-                    System.out.println("Извините, вы не можете сделать заказ");
-                break;
             }
         }
     }
@@ -29,9 +26,20 @@ public class ElectronicsOrder extends Order {
 
     @Override
     void calculatePrice() {
-        double priceShip = 10.5;
         double discount = 0.15;
-        double newPrice = getTotalPrice() + getBasePrice() + priceShip + discount;
+        double priceWithDiscount = getTotalPrice() + getBasePrice() - getBasePrice() * discount;
+        double priceWithDelivery;
+        if (getGetShipToCity() != "Kiev" || getGetShipToCity() != "Odessa") {
+            priceWithDelivery = priceWithDiscount + (priceWithDiscount *0.15);
+        } else {
+            priceWithDelivery = priceWithDiscount + (priceWithDiscount *0.10);
+        }
+        double newPrice;
+        if (getBasePrice() > 1000) {
+            newPrice = priceWithDiscount - (priceWithDiscount* 0.05);
+        }else {
+            newPrice = priceWithDelivery;
+        }
         setTotalPrice(newPrice);
         System.out.println("Стоимость Вашего заказа: " + getTotalPrice());
     }

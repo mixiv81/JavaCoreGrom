@@ -12,22 +12,24 @@ public class FurnitureOrder extends Order {
 
     @Override
     void validateOrder() {
-        String[] cities = {"Kiev", "Odessa", "Dnepr", "Kharkov"};
-        int minPrice = 100;
-        String gender = "Female";
-        for (int i = 0; i < cities.length; i++) {
-            if (cities[i] == getCustomerOwned().getCity() && getBasePrice() > minPrice && getCustomerOwned().getGender() == gender) {
-                System.out.println("Ваш заказ " + getItemName() + " код " + furnitureCode + ". Дата подтверждения " + getDateConfirmed());
-                break;
-            }
-            else
-                System.out.println("Извините, вы не можете сделать заказ");
-            break;
+        String[] fromCities = {"Kiev", "Lvov"};
+        for (int i = 0; i < fromCities.length; i++) {
+            if (fromCities[i] == getShipFromSity() && getBasePrice() > 500 && !getCustomerOwned().getName().equals("Test"))
+                System.out.println("Ваш заказ " + getItemName() + ". Код " + furnitureCode + ". Дата подтверждения " + getDateConfirmed());
         }
     }
 
+
     @Override
     void calculatePrice() {
-
+        double newPrice;
+        if (getBasePrice() > 5000) {
+            newPrice = getBasePrice() + (getBasePrice() * 0.5);
+        } else {
+            newPrice = getBasePrice() + (getBasePrice() * 0.5);
+        }
+        setTotalPrice(newPrice);
+        System.out.println("Стоимость Вашего заказа: " + getTotalPrice());
     }
 }
+

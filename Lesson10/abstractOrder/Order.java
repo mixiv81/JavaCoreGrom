@@ -1,5 +1,6 @@
 package Lesson10.abstractOrder;
 
+
 import java.util.Date;
 
 public abstract class Order {
