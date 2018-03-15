@@ -17,7 +17,9 @@ public class Demo {
         System.out.println(electronicsOrder.getDateConfirmed());
         electronicsOrder.calculatePrice();
         System.out.println(electronicsOrder.getTotalPrice());
+        electronicsOrder.confirmShipping();
         System.out.println(electronicsOrder.getDateShipped());
+
 
 
 
@@ -25,13 +27,16 @@ public class Demo {
         System.out.println(furnitureOrder.getDateConfirmed());
         furnitureOrder.calculatePrice();
         System.out.println(furnitureOrder.getTotalPrice());
+        furnitureOrder.calculatePrice();
         System.out.println(furnitureOrder.getDateShipped());
+
 
 
         electronicsOrder1.validateOrder();
         System.out.println(electronicsOrder1.getDateConfirmed());
         electronicsOrder1.calculatePrice();
         System.out.println(electronicsOrder1.getTotalPrice());
+        electronicsOrder1.confirmShipping();
         System.out.println(electronicsOrder1.getDateShipped());
 
 
@@ -39,6 +44,7 @@ public class Demo {
         System.out.println(furnitureOrder1.getDateConfirmed());
         furnitureOrder1.calculatePrice();
         System.out.println(furnitureOrder1.getTotalPrice());
+        furnitureOrder1.confirmShipping();
         System.out.println(furnitureOrder1.getDateShipped());
 
     }
