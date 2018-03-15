@@ -5,31 +5,22 @@ import java.util.Date;
 public class FurnitureOrder extends Order {
     String furnitureCode;
 
-    public FurnitureOrder(String itemName, String shipFromCity, String ShipToCity, int basePrice, Customer customerOwned, String furnitureCode) {
-        super(itemName, shipFromCity, ShipToCity, basePrice, customerOwned);
+    public FurnitureOrder(String itemName, Date dateCreated, String shipFromCity, String ShipToCity, int basePrice, Customer customerOwned, String furnitureCode) {
+        super(itemName, dateCreated, shipFromCity, ShipToCity, basePrice, customerOwned);
         this.furnitureCode = furnitureCode;
     }
 
     @Override
     void validateOrder() {
-        String[] fromCities = {"Kiev", "Lvov"};
-        for (int i = 0; i < fromCities.length; i++) {
-            if (fromCities[i] == getShipFromSity() && getBasePrice() > 500 && !getCustomerOwned().getName().equals("Test"))
-                System.out.println("Ваш заказ " + getItemName() + ". Код " + furnitureCode + ". Дата подтверждения " + getDateConfirmed());
+        String[] fromCity = {"Kiev", "Lvov"};
+        if (checkFromCity(fromCity) && getBasePrice() >= 500 && !getCustomerOwned().getName().equals("Test")) {
+            setDateConfirmed(new Date());
         }
     }
-
 
     @Override
     void calculatePrice() {
-        double newPrice;
-        if (getBasePrice() > 5000) {
-            newPrice = getBasePrice() + (getBasePrice() * 0.5);
-        } else {
-            newPrice = getBasePrice() + (getBasePrice() * 0.5);
-        }
+        double newPrice = getBasePrice() > 5000 ? getBasePrice() + getBasePrice() * 0.02 : getBasePrice() + getBasePrice() * 0.05;
         setTotalPrice(newPrice);
-        System.out.println("Стоимость Вашего заказа: " + getTotalPrice());
     }
 }
-

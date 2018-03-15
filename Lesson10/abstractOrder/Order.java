@@ -1,6 +1,5 @@
 package Lesson10.abstractOrder;
 
-
 import java.util.Date;
 
 public abstract class Order {
@@ -14,9 +13,9 @@ public abstract class Order {
     private double totalPrice;
     private Customer customerOwned;
 
-    public Order(String itemName, String shipFromCity, String ShipToCity, int basePrice, Customer customerOwned) {
+    public Order(String itemName, Date dateCreated, String shipFromCity, String ShipToCity, int basePrice, Customer customerOwned) {
         this.itemName = itemName;
-        this.dateCreated = new Date();
+        this.dateCreated = dateCreated;
         this.shipFromCity = shipFromCity;
         this.ShipToCity = ShipToCity;
         this.basePrice = basePrice;
@@ -24,11 +23,32 @@ public abstract class Order {
     }
 
     abstract void validateOrder();
+
     abstract void calculatePrice();
 
-    void confirmShipping(){
-        if(dateShipped == null)
+    void confirmShipping() {
+        if (dateShipped == null)
             dateShipped = new Date();
+    }
+
+    protected boolean checkFromCity(String[] deliveryFromCity) {
+        if (deliveryFromCity != null) {
+            for (String fromCity : deliveryFromCity) {
+                if (fromCity.equals(getShipFromCity()))
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    protected boolean checkToCity(String[] deliveryToCity) {
+        if (deliveryToCity != null) {
+            for (String toCity : deliveryToCity) {
+                if (toCity.equals(getShipToCity()))
+                    return true;
+            }
+        }
+        return false;
     }
 
     public String getItemName() {
@@ -47,11 +67,11 @@ public abstract class Order {
         return dateShipped;
     }
 
-    public String getShipFromSity() {
+    public String getShipFromCity() {
         return shipFromCity;
     }
 
-    public String getGetShipToCity() {
+    public String getShipToCity() {
         return ShipToCity;
     }
 
