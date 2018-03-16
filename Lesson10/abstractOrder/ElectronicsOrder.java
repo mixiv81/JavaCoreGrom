@@ -25,7 +25,6 @@ public class ElectronicsOrder extends Order {
     @Override
     public void calculatePrice() {
         double priceDelivery = getShipToCity().equals("Киев") || getShipToCity().equals("Одесса") ? getBasePrice() * 0.10 : getBasePrice() * 0.15;
-        double priceWithDiscount = getBasePrice() > 1000 ? (getBasePrice() + priceDelivery) * 0.95 : getBasePrice()+ priceDelivery;
-        setTotalPrice(priceWithDiscount);
+        setTotalPrice(getBasePrice() > 1000 ? (getBasePrice() + priceDelivery) * 0.95 : getBasePrice()+ priceDelivery);
     }
 }
