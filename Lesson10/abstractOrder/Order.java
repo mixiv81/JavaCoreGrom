@@ -5,10 +5,10 @@ import java.util.Date;
 public abstract class Order {
     private String itemName;
     private Date dateCreated;
-    private Date dateConfirmed = new Date();
+    private Date dateConfirmed;
     private Date dateShipped;
     private String shipFromCity;
-    private String ShipToCity;
+    private String shipToCity;
     private int basePrice;
     private double totalPrice;
     private Customer customerOwned;
@@ -17,16 +17,16 @@ public abstract class Order {
         this.itemName = itemName;
         this.dateCreated = dateCreated;
         this.shipFromCity = shipFromCity;
-        this.ShipToCity = ShipToCity;
+        this.shipToCity = ShipToCity;
         this.basePrice = basePrice;
         this.customerOwned = customerOwned;
     }
 
-    abstract void validateOrder();
+    abstract protected void validateOrder();
 
-    abstract void calculatePrice();
+    abstract protected void calculatePrice();
 
-    void confirmShipping() {
+    protected void confirmShipping() {
         if (dateShipped == null)
             dateShipped = new Date();
     }
@@ -72,7 +72,7 @@ public abstract class Order {
     }
 
     public String getShipToCity() {
-        return ShipToCity;
+        return shipToCity;
     }
 
     public int getBasePrice() {

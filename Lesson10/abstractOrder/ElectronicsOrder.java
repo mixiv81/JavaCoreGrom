@@ -11,24 +11,20 @@ public class ElectronicsOrder extends Order {
     }
 
     @Override
-    void validateOrder() {
+    protected void validateOrder() {
         String[] fromCity = {"Kiev", "Odessa", "Dnepr", "Kharkov"};
         String[] toCity = {"Kiev", "Odessa", "Dnepr", "Kharkov"};
-        if (checkToCity(toCity) && checkFromCity(fromCity) && getBasePrice() >= 100 && getCustomerOwned().getGender().equals("Female")) {
+        if (checkFromCity(fromCity)&& checkToCity(toCity) && getBasePrice() >= 100 && getCustomerOwned().getGender().equals("Female")) {
             setDateConfirmed(new Date());
         }
     }
 
 
     @Override
-    void calculatePrice() {
+    protected void calculatePrice() {
         String[] deliveryCity = {"Kiev", "Odessa"};
-        double discount = 0.15;
-        double priceWithDiscount = getBasePrice() - getBasePrice() * discount;
-        double newPrice = getBasePrice() > 1000 ? priceWithDiscount - priceWithDiscount * 0.05 : priceWithDiscount;
-        double priceWithDelivery = checkToCity(deliveryCity) ? newPrice + newPrice * 0.10 : newPrice + newPrice * 0.15;
-        setTotalPrice(priceWithDelivery);
+        double priceDelivery = checkToCity(deliveryCity) ? getBasePrice() * 0.10 : getBasePrice() * 0.15;
+        double priceWithDiscount = getBasePrice() > 1000 ? getBasePrice() - getBasePrice() * 0.05 : getBasePrice();
+        setTotalPrice(priceDelivery + priceWithDiscount);
     }
-
-
 }

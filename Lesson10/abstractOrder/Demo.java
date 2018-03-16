@@ -14,39 +14,20 @@ public class Demo {
         FurnitureOrder furnitureOrder1 = new FurnitureOrder("Table", new Date(), "Poltava", "Lvov", 250, customer, "TB250");
 
         electronicsOrder.validateOrder();
-        System.out.println(electronicsOrder.getDateConfirmed());
         electronicsOrder.calculatePrice();
-        System.out.println(electronicsOrder.getTotalPrice());
         electronicsOrder.confirmShipping();
-        System.out.println(electronicsOrder.getDateShipped());
-
-
-
 
         furnitureOrder.validateOrder();
-        System.out.println(furnitureOrder.getDateConfirmed());
         furnitureOrder.calculatePrice();
-        System.out.println(furnitureOrder.getTotalPrice());
-        furnitureOrder.calculatePrice();
-        System.out.println(furnitureOrder.getDateShipped());
-
-
+        furnitureOrder.confirmShipping();
 
         electronicsOrder1.validateOrder();
-        System.out.println(electronicsOrder1.getDateConfirmed());
         electronicsOrder1.calculatePrice();
-        System.out.println(electronicsOrder1.getTotalPrice());
         electronicsOrder1.confirmShipping();
-        System.out.println(electronicsOrder1.getDateShipped());
-
 
         furnitureOrder1.validateOrder();
-        System.out.println(furnitureOrder1.getDateConfirmed());
         furnitureOrder1.calculatePrice();
-        System.out.println(furnitureOrder1.getTotalPrice());
         furnitureOrder1.confirmShipping();
-        System.out.println(furnitureOrder1.getDateShipped());
-
     }
 }
 
