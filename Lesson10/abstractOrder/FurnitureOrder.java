@@ -11,15 +11,16 @@ public class FurnitureOrder extends Order {
     }
 
     @Override
-    protected void validateOrder() {
-        String[] fromCity = {"Kiev", "Lvov"};
-        if (checkFromCity(fromCity) && getBasePrice() >= 500 && !getCustomerOwned().getName().equals("Test")) {
-            setDateConfirmed(new Date());
+    public void validateOrder() {
+        if (getShipFromCity().equals("Киев") || getShipFromCity().equals("Львов")){
+            if (getBasePrice() >= 500 && !getCustomerOwned().getName().equals("Тест")){
+                setDateConfirmed(new Date());
+            }
         }
     }
 
     @Override
-   protected void calculatePrice() {
-        setTotalPrice(getBasePrice() > 5000 ? getBasePrice() * 1.02 : getBasePrice() * 1.05);
+   public void calculatePrice() {
+       setTotalPrice(getBasePrice() > 5000 ? getBasePrice() * 1.02 : getBasePrice() * 1.05);
     }
 }

@@ -11,19 +11,20 @@ public class ElectronicsOrder extends Order {
     }
 
     @Override
-    protected void validateOrder() {
-        String[] fromCity = {"Kiev", "Odessa", "Dnepr", "Kharkov"};
-        String[] toCity = {"Kiev", "Odessa", "Dnepr", "Kharkov"};
-        if (checkFromCity(fromCity)&& checkToCity(toCity) && getBasePrice() >= 100 && getCustomerOwned().getGender().equals("Female")) {
-            setDateConfirmed(new Date());
+    public void validateOrder() {
+        if (getShipFromCity().equals("Киев") || getShipFromCity().equals("Одесса") || getShipFromCity().equals("Днепр") || getShipFromCity().equals("Харьков")) {
+            if (getShipToCity().equals("Киев") || getShipToCity().equals("Одесса") || getShipToCity().equals("Днепр") || getShipToCity().equals("Харьков")) {
+                if (getBasePrice() >= 100 && getCustomerOwned().getGender().equals("Женский")) {
+                    setDateConfirmed(new Date());
+                }
+            }
         }
     }
 
 
     @Override
-    protected void calculatePrice() {
-        String[] deliveryCity = {"Kiev", "Odessa"};
-        double priceDelivery = checkToCity(deliveryCity) ? getBasePrice() * 0.10 : getBasePrice() * 0.15;
+    public void calculatePrice() {
+        double priceDelivery = getShipToCity().equals("Киев") || getShipToCity().equals("Одесса") ? getBasePrice() * 0.10 : getBasePrice() * 0.15;
         double priceWithDiscount = getBasePrice() > 1000 ? getBasePrice() - getBasePrice() * 0.05 : getBasePrice();
         setTotalPrice(priceDelivery + priceWithDiscount);
     }

@@ -22,33 +22,13 @@ public abstract class Order {
         this.customerOwned = customerOwned;
     }
 
-    abstract protected void validateOrder();
+    abstract public void validateOrder();
 
-    abstract protected void calculatePrice();
+    abstract public void calculatePrice();
 
     protected void confirmShipping() {
         if (dateShipped == null)
             dateShipped = new Date();
-    }
-
-    protected boolean checkFromCity(String[] deliveryFromCity) {
-        if (deliveryFromCity != null) {
-            for (String fromCity : deliveryFromCity) {
-                if (fromCity.equals(getShipFromCity()))
-                    return true;
-            }
-        }
-        return false;
-    }
-
-    protected boolean checkToCity(String[] deliveryToCity) {
-        if (deliveryToCity != null) {
-            for (String toCity : deliveryToCity) {
-                if (toCity.equals(getShipToCity()))
-                    return true;
-            }
-        }
-        return false;
     }
 
     public String getItemName() {
