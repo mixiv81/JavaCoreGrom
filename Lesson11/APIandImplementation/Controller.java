@@ -34,12 +34,12 @@ public class Controller {
 
     public Room[] check(API api1, API api2) {
         int countInd = 0;
-        for (int i = 0; i < api1.getAll().length; i++) {
-            for (int k = 0; k < api2.getAll().length; k++) {
-                if (api2.getAll()[i] != null && api1.getAll()[k] != null) {
-                    if (api1.getAll()[i].getPrice() == api2.getAll()[k].getPrice() && api1.getAll()[i].getPersons() == api2.getAll()[k].getPersons()) {
-                        if (api1.getAll()[i].getHotelName().equals(api2.getAll()[k].getHotelName()) && api1.getAll()[i].getCityName().equals(api2.getAll()[k].getCityName())) {
-                       countInd++;
+        for (Room room1 : api1.getAll()){
+            for (Room room2 : api2.getAll()) {
+                if (room1 != null && room2 != null) {
+                    if (room1.getPrice() == room2.getPrice() && room1.getPersons() == room2.getPersons()) {
+                        if (room1.getHotelName().equals(room2.getHotelName()) && room1.getCityName().equals(room2.getCityName())) {
+                            countInd++;
                         }
                     }
                 }
@@ -47,12 +47,14 @@ public class Controller {
         }
 
         Room[] resultRoom = new Room[countInd];
-        for (int i = 0; i < api1.getAll().length; i++) {
-            for (int k = 0; k < api2.getAll().length; k++) {
-                if (api2.getAll()[i] != null && api1.getAll()[k] != null) {
-                    if (api1.getAll()[i].getPrice() == api2.getAll()[k].getPrice() && api1.getAll()[i].getPersons() == api2.getAll()[k].getPersons()) {
-                        if (api1.getAll()[i].getHotelName().equals(api2.getAll()[k].getHotelName()) && api1.getAll()[i].getCityName().equals(api2.getAll()[k].getCityName())) {
-                            resultRoom[i] = api1.getAll()[i];
+        int index = 0;
+        for (Room room1 : api1.getAll()){
+            for (Room room2 : api2.getAll()) {
+                if (room1 != null && room2 != null) {
+                    if (room1.getPrice() == room2.getPrice() && room1.getPersons() == room2.getPersons()) {
+                        if (room1.getHotelName().equals(room2.getHotelName()) && room1.getCityName().equals(room2.getCityName())) {
+                            resultRoom[index] = room1;
+                            index++;
                         }
                     }
                 }
