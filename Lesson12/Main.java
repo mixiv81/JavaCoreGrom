@@ -18,12 +18,12 @@ public class Main {
         BankSystem bankSystem = new UkrainianBankSystem();
 
 
-        bankSystem.withdraw(user1, 20000);
-        bankSystem.withdraw(user2, 200);
-        bankSystem.withdraw(user3, 2);
-        bankSystem.withdraw(user4, 1500);
-        bankSystem.withdraw(user5, 40);
-        bankSystem.withdraw(user6, 200);
+//        bankSystem.withdraw(user1, 20000);
+//        bankSystem.withdraw(user2, 200);
+//        bankSystem.withdraw(user3, 2);
+//        bankSystem.withdraw(user4, 1500);
+//        bankSystem.withdraw(user5, 40);
+//        bankSystem.withdraw(user6, 200);
         System.out.println("1  " + user1.getBalance());
         System.out.println("2  " + user2.getBalance());
         System.out.println("3  " + user3.getBalance());
@@ -32,12 +32,12 @@ public class Main {
         System.out.println("6  " + user6.getBalance());
 
 
-        bankSystem.withdraw(user1, 20000);
-        bankSystem.withdraw(user2, 200000);
-        bankSystem.withdraw(user3, 2);
-        bankSystem.withdraw(user4, 150000);
-        bankSystem.withdraw(user5, 40);
-        bankSystem.withdraw(user6, 200);
+//        bankSystem.withdraw(user1, 20000);
+//        bankSystem.withdraw(user2, 200000);
+//        bankSystem.withdraw(user3, 2);
+//        bankSystem.withdraw(user4, 150000);
+//        bankSystem.withdraw(user5, 40);
+//        bankSystem.withdraw(user6, 200);
         bankSystem.fund(user1, 26000);
         bankSystem.fund(user2, 200);
         bankSystem.fund(user3, 20000);
@@ -45,15 +45,15 @@ public class Main {
         bankSystem.fund(user5, 400000);
         bankSystem.fund(user6, 100000);
 
-//        System.out.println("1  " + user1.getBalance());
-//        System.out.println("2  " + user2.getBalance());
-//        System.out.println("3  " + user3.getBalance());
-//        System.out.println("4  " + user4.getBalance());
-//        System.out.println("5  " + user5.getBalance());
-//        System.out.println("6  " + user6.getBalance());
-        bankSystem.transferMoney(user1,user2, 12000);
-        bankSystem.transferMoney(user3,user4,200);
-        bankSystem.transferMoney(user5, user6, 1200000);
+        System.out.println("1  " + user1.getBalance());
+        System.out.println("2  " + user2.getBalance());
+        System.out.println("3  " + user3.getBalance());
+        System.out.println("4  " + user4.getBalance());
+        System.out.println("5  " + user5.getBalance());
+        System.out.println("6  " + user6.getBalance());
+//        bankSystem.transferMoney(user1,user2, 12000);
+//        bankSystem.transferMoney(user3,user4,200);
+//        bankSystem.transferMoney(user5, user6, 1200000);
 
 //        System.out.println(user1.getBalance());
 //        System.out.println(user2.getBalance());
@@ -62,18 +62,18 @@ public class Main {
 //        System.out.println(user5.getBalance());
 //        System.out.println(user6.getBalance());
 
-        bankSystem.paySalary(user1);
-        bankSystem.paySalary(user2);
-        bankSystem.paySalary(user3);
-        bankSystem.paySalary(user4);
-        bankSystem.paySalary(user5);
-        bankSystem.paySalary(user6);
-
-        System.out.println(user1.toString());
-        System.out.println(user2.toString());
-        System.out.println(user3.toString());
-        System.out.println(user4.toString());
-        System.out.println(user5.toString());
-        System.out.println(user6.toString());
+//        bankSystem.paySalary(user1);
+//        bankSystem.paySalary(user2);
+//        bankSystem.paySalary(user3);
+//        bankSystem.paySalary(user4);
+//        bankSystem.paySalary(user5);
+//        bankSystem.paySalary(user6);
+//
+//        System.out.println(user1.toString());
+//        System.out.println(user2.toString());
+//        System.out.println(user3.toString());
+//        System.out.println(user4.toString());
+//        System.out.println(user5.toString());
+//        System.out.println(user6.toString());
     }
 }
