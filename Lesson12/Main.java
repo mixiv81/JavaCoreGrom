@@ -17,19 +17,19 @@ public class Main {
 
         BankSystem bankSystem = new UkrainianBankSystem();
 
-
+//
         bankSystem.withdraw(user1, 20000);
         bankSystem.withdraw(user2, 200);
         bankSystem.withdraw(user3, 2);
         bankSystem.withdraw(user4, 1500);
         bankSystem.withdraw(user5, 40);
         bankSystem.withdraw(user6, 200);
-
+//
         bankSystem.fund(user1, 25000);
         bankSystem.fund(user2, 200);
         bankSystem.fund(user3, 1000000);
-        bankSystem.fund(user4, 1000);
-        bankSystem.fund(user5, 4000);
+        bankSystem.fund(user4, 100022);
+        bankSystem.fund(user5, 400000);
         bankSystem.fund(user6, 100000);
 
 //        System.out.println(user1.getBalance());
@@ -55,7 +55,7 @@ public class Main {
         bankSystem.paySalary(user4);
         bankSystem.paySalary(user5);
         bankSystem.paySalary(user6);
-
+//
         System.out.println(user1.toString());
         System.out.println(user2.toString());
         System.out.println(user3.toString());

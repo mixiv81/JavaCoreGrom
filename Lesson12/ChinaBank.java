@@ -27,21 +27,21 @@ public class ChinaBank extends Bank {
         if (getCurrency() == Currency.USD)
             return 0.01;
         else
-            return 1;
+            return 0;
     }
 
     @Override
     public double getCommission(int amount) {
         if (getCurrency() == Currency.USD) {
             if (amount <= 1000)
-                return amount * 0.03;
+                return 0.03;
             else
-                return amount * 0.05;
+                return 0.05;
         } else {
             if (amount <= 1000)
-                return amount * 0.1;
+                return 0.1;
             else
-                return amount * 0.11;
+                return 0.11;
         }
     }
 }

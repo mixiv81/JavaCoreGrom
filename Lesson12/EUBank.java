@@ -34,14 +34,14 @@ public class EUBank extends Bank {
     public double getCommission(int amount) {
         if (getCurrency() == Currency.USD) {
             if (amount <= 1000)
-                return amount * 0.05;
+                return 0.05;
             else
-                return amount * 0.07;
+                return 0.07;
         } else {
             if (amount <= 1000)
-                return amount * 0.02;
+                return 0.02;
             else
-                return amount * 0.04;
+                return 0.04;
         }
     }
 }

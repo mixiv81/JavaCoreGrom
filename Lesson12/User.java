@@ -63,6 +63,10 @@ public class User {
         this.salary = salary;
     }
 
+    public void setBank(Bank bank) {
+        this.bank = bank;
+    }
+
     @Override
     public String toString() {
         return "User{" +
