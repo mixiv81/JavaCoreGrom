@@ -62,7 +62,7 @@ public class UkrainianBankSystem implements BankSystem {
 
 
     private boolean checkFundLimit(User user, int amount) {
-        if (amount - getAmountOfCommission(user, amount)> user.getBank().getLimitOfFunding()) {
+        if (amount > user.getBank().getLimitOfFunding()) {
             System.err.println("Cant't fund money " + amount + " to user" + user.toString());
             return false;
         }
