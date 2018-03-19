@@ -34,14 +34,14 @@ public class USBank extends Bank {
     public double getCommission(int amount) {
         if (getCurrency() == Currency.USD) {
             if (amount <= 1000)
-                return 0.05;
+                return amount * 0.05;
             else
-                return 0.07;
+                return amount * 0.07;
         } else {
             if (amount <= 1000)
-                return 0.06;
+                return amount * 0.06;
             else
-                return 0.08;
+                return amount * 0.08;
         }
 
     }

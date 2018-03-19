@@ -32,16 +32,16 @@ public class EUBank extends Bank {
 
     @Override
     public double getCommission(int amount) {
-        if (getCurrency() == Currency.USD){
+        if (getCurrency() == Currency.USD) {
             if (amount <= 1000)
-                return 0.05;
+                return amount * 0.05;
             else
-                return 0.07;
-        }else {
-            if (amount<=1000)
-                return 0.02;
+                return amount * 0.07;
+        } else {
+            if (amount <= 1000)
+                return amount * 0.02;
             else
-                return 0.04;
+                return amount * 0.04;
         }
     }
 }

@@ -9,6 +9,16 @@ public class User {
     private int salary;
     private Bank bank;
 
+    public User(long id, String name, double balance, int monthsOfEmployment, String companyName, int salary, Bank bank) {
+        this.id = id;
+        this.name = name;
+        this.balance = balance;
+        this.monthsOfEmployment = monthsOfEmployment;
+        this.companyName = companyName;
+        this.salary = salary;
+        this.bank = bank;
+    }
+
     public long getId() {
         return id;
     }
@@ -51,5 +61,18 @@ public class User {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", balance=" + balance +
+                ", monthsOfEmployment=" + monthsOfEmployment +
+                ", companyName='" + companyName + '\'' +
+                ", salary=" + salary +
+                ", bank=" + bank +
+                '}';
     }
 }
