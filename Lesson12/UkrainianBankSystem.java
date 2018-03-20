@@ -22,13 +22,11 @@ public class UkrainianBankSystem implements BankSystem {
     @Override
     public void transferMoney(User fromUser, User toUser, int amount) {
 
-        if (!checkWithdraw(fromUser, amount) && !checkFundLimit(toUser, amount))
-            return;
+        if (checkWithdraw(fromUser, amount) && checkFundLimit(toUser, amount)){
         withdraw(fromUser, amount);
-
         fund(toUser, amount);
+        }
     }
-
     @Override
     public void paySalary(User user) {
         if (!checkFundLimit(user, user.getSalary()))
