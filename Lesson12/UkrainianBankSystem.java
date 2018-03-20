@@ -16,7 +16,7 @@ public class UkrainianBankSystem implements BankSystem {
         if (!checkFundLimit(user, amount))
             return;
 
-        user.setBalance(user.getBalance() + amount - getAmountOfCommission(user, amount));
+        user.setBalance(user.getBalance() + amount);
     }
 
     @Override
