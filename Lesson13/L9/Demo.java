@@ -1,4 +1,4 @@
-package Lesson13.Lesson9;
+package Lesson13.L9;
 
 import Lesson9.HW.User;
 import Lesson9.HW.UserRepository;

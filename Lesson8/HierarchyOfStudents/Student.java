@@ -1,5 +1,7 @@
 package Lesson8.HierarchyOfStudents;
 
+import java.util.Arrays;
+
 public class Student {
     String firstName;
     String lastName;
@@ -12,5 +14,16 @@ public class Student {
         this.lastName = lastName;
         this.group = group;
         this.coursesTaken = coursesTaken;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", group=" + group +
+                ", coursesTaken=" + Arrays.toString(coursesTaken) +
+                ", age=" + age +
+                '}';
     }
 }

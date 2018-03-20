@@ -1,5 +1,7 @@
 package Lesson11.APIandImplementation;
 
+import java.util.Arrays;
+
 public class BookingComAPI implements API {
     Room[] rooms;
 
@@ -34,5 +36,12 @@ public class BookingComAPI implements API {
     @Override
     public Room[] getAll() {
         return rooms;
+    }
+
+    @Override
+    public String toString() {
+        return "BookingComAPI{" +
+                "rooms=" + Arrays.toString(rooms) +
+                '}';
     }
 }
