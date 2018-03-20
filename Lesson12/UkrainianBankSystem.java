@@ -1,6 +1,7 @@
 package Lesson12;
 
 public class UkrainianBankSystem implements BankSystem {
+
     @Override
     public void withdraw(User user, int amount) {
 
@@ -22,11 +23,12 @@ public class UkrainianBankSystem implements BankSystem {
     @Override
     public void transferMoney(User fromUser, User toUser, int amount) {
 
-        if (checkWithdraw(fromUser, amount) && checkFundLimit(toUser, amount)){
-        withdraw(fromUser, amount);
-        fund(toUser, amount);
-        }
+        if (checkWithdraw(fromUser, amount) && checkFundLimit(toUser, amount) && checkCurrency(fromUser, toUser)) {
+                withdraw(fromUser, amount);
+                fund(toUser, amount);
+            }
     }
+
     @Override
     public void paySalary(User user) {
         if (!checkFundLimit(user, user.getSalary()))
@@ -54,7 +56,7 @@ public class UkrainianBankSystem implements BankSystem {
         return true;
     }
 
-    
+
     private boolean checkFundLimit(User user, int amount) {
         if (amount > user.getBank().getLimitOfFunding()) {
             printFundError(user, amount);
@@ -63,7 +65,7 @@ public class UkrainianBankSystem implements BankSystem {
         return true;
     }
 
-    private void printFundError(User user, int amount){
+    private void printFundError(User user, int amount) {
         System.err.println("Cant't fund money " + amount + " to user" + user.toString());
     }
 
@@ -71,6 +73,11 @@ public class UkrainianBankSystem implements BankSystem {
         return user.getBank().getCommission(amount) * amount;
     }
 
-
-
+    private boolean checkCurrency(User fromUser, User toUser) {
+        if (fromUser.getBank().getCurrency() != toUser.getBank().getCurrency()) {
+            System.err.println("Operation impossible because of currency " + fromUser.getId());
+            return false;
+        }
+        return true;
+    }
 }
