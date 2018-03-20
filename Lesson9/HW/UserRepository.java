@@ -51,7 +51,7 @@ public class UserRepository {
     public User getUserByName(String name) {
         if (users != null)
             for (int i = 0; i < countArrInd(); i++) {
-                if (users[i] != null && users[i].getName() == name)
+                if (users[i] != null && users[i].getName().equals(name))
                     return users[i];
             }
         return null;
@@ -78,14 +78,14 @@ public class UserRepository {
     public User findById(long id) {
         if (users != null)
             for (int i = 0; i < countArrInd(); i++) {
-                if (users[i].getId() == id)
+                if (users[i] != null && users[i].getId() == id )
                     return users[i];
             }
         return null;
     }
 
     public User save(User user) {
-        if (findById(user.getId()) == null) {
+        if (user != null && findById(user.getId()) == null) {
             for (int i = 0; i < users.length; i++) {
                 if (users[i] == null) {
                     users[i] = user;
@@ -97,7 +97,7 @@ public class UserRepository {
     }
 
     public User update(User user) {
-        if (findById(user.getId()) != null) {
+        if (user != null && findById(user.getId()) != null) {
             for (int i = 0; i < users.length; i++) {
                 if (users[i].getId() == user.getId()) {
                     users[i] = user;
@@ -109,10 +109,12 @@ public class UserRepository {
     }
 
     public void delete(long id) {
-        User user = findById(id);
-        for (int i = 0; i < users.length; i++) {
-            if (users[i] == user) {
-                users[i] = null;
+        if (users != null) {
+            User user = findById(id);
+            for (int i = 0; i < users.length; i++) {
+                if (users[i] == user) {
+                    users[i] = null;
+                }
             }
         }
     }
