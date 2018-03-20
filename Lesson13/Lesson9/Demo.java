@@ -15,7 +15,7 @@ public class Demo {
 //  добавляем юзеров  вмассив
 //  проверяем метод "save"
 
-        
+
         int i = 1;
         while (i < 15) {
             User user = new User(i, "Ann", "fg5f6");
