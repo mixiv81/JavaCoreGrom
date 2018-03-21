@@ -25,8 +25,8 @@ public class Order {
         this.type = type;
     }
 
-    public Order() {
-    }
+//    public Order() {
+//    }
 
    public void confirmOrder() {
         if (!isConfirmed) {
@@ -80,5 +80,19 @@ public class Order {
 
     public String getType() {
         return type;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", price=" + price +
+                ", dateCreated=" + dateCreated +
+                ", isConfirmed=" + isConfirmed +
+                ", dateConfirmed=" + dateConfirmed +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }
