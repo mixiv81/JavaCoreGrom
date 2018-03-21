@@ -2,7 +2,7 @@ package Lesson13.L12;
 
 import Lesson12.*;
 
-public class Demo {
+public class L12 {
     public static void main(String[] args) {
         Bank usBank = new USBank(1111, "Sweden", Currency.USD, 100, 1400, 4, 444344343);
         Bank euBank = new EUBank(2221, "Italy", Currency.EUR, 150, 1500, 5, 87656254);
