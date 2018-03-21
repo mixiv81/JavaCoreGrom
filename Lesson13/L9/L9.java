@@ -5,7 +5,7 @@ import Lesson9.HW.UserRepository;
 
 import java.util.Arrays;
 
-public class Demo {
+public class L9 {
     public static void main(String[] args) {
         User[] users = new User[10];
         UserRepository userRepository = new UserRepository(users);
