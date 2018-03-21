@@ -14,7 +14,8 @@ public class Order {
     String country;
     String type;
 
-    public Order(int price, Date dateCreated, boolean isConfirmed, Date dateConfirmed, String city, String country, String type) {
+    public Order(long id, int price, Date dateCreated, boolean isConfirmed, Date dateConfirmed, String city, String country, String type) {
+        this.id = id;
         this.price = price;
         this.dateCreated = dateCreated;
         this.isConfirmed = isConfirmed;
@@ -35,18 +36,49 @@ public class Order {
     }
 
     public boolean checkPrice() {
-        boolean priceDeal = price > 1000;
-        return priceDeal;
+        return price > 1000;
     }
 
     public boolean isValidType() {
         String buy = "Buy";
         String sale = "Sale";
-        if (buy == type)
+        if (buy.equals(type))
             return true;
-        if (sale == type)
+        if (sale.equals(type))
             return true;
         else
             return false;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public boolean isConfirmed() {
+        return isConfirmed;
+    }
+
+    public Date getDateConfirmed() {
+        return dateConfirmed;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String getType() {
+        return type;
     }
 }

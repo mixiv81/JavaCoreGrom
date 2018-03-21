@@ -11,12 +11,11 @@ public class WithdrawalFromBalance {
     static int withdraw(String[] clients, int[] balance, String client, int amound) {
         int indClient = 0;
         for (String el : clients) {
-            if (el == client) {
+            if (el.equals(client)) {
                 break;
             }
             indClient++;
         }
-        int withdrawalFromBal = balance[indClient] >= amound ? balance[indClient] - amound : -1;
-        return withdrawalFromBal;
+        return balance[indClient] >= amound ? balance[indClient] - amound : -1;
     }
 }

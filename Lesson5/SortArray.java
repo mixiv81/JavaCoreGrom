@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class SortArray {
     public static void main(String[] args) {
-        int[] array = {10, 5, 6, 7, 8, 3, 4, 2};
-        System.out.println(Arrays.toString(arraySortAscending(array)));
+        //int[] array = {10, 5, 6, 7, 8, 3, 4, 2};
+        //System.out.println(Arrays.toString(arraySortAscending(array)));
     }
 
-    static int[] arraySortAscending(int[] arr) {
+    public int[] arraySortAscending(int[] arr) {
         int[] res = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
 

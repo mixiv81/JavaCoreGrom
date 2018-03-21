@@ -1,19 +1,17 @@
 package Lesson4;
 
+
 public class SumExercise {
 
-    static boolean compareSums(int a, int b, int c, int d) {
-        if (sum(a, b) > sum(c, d))
-            return true;
-        else
-            return false;
+    public boolean compareSums(int a, int b, int c, int d) {
+        return sum(a, b) > sum(c, d);
     }
 
-    static long sum(int from, int to) {
-        long res = 0;
-        for (long i = from; i <= to; i++) {
+    public long sum(int from, int to) {
+        int res = 0;
+                for (long i = from; i <= to; i++) {
             res += i;
         }
-        return res;
+        return  res;
     }
 }
