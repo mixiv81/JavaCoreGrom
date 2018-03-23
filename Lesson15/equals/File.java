@@ -18,13 +18,12 @@ public class File {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         File file = (File) o;
-        return Objects.equals(path, file.path);
+        return path.equals(file.path);
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(path);
+        return path.hashCode();
     }
 //    @Override
 //    public boolean equals(Object o) {
