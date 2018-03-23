@@ -1,4 +1,4 @@
-package Lesson13.L12;
+package Lesson13;
 
 import Lesson12.*;
 
