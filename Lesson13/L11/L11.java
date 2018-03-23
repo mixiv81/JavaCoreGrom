@@ -22,7 +22,7 @@ public class L11 {
         API[] apis = new API[]{bookingComAPI, tripAdvisorAPI, googleAPI};
         Controller controller = new Controller(apis);
 
-        
+
 
         System.out.println(Arrays.toString(controller.requestRooms(2000, 4, "Dnepr", "Kiev")));
 
