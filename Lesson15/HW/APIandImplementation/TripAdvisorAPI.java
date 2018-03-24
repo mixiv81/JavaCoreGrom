@@ -20,7 +20,7 @@ public class TripAdvisorAPI implements API {
         Room[] roomsPrices = new Room[countedArrInd];
         int index = 0;
         for (Room room : rooms) {
-            if (room.getCityName().equals(city) && room.getHotelName().equals(hotel) && room.getPrice() == price) {
+            if (room != null && room.getCityName().equals(city) && room.getHotelName().equals(hotel) && room.getPrice() == price) {
                 if (room.getPersons() >= persons - 1 && room.getPersons() <= persons + 1) {
                     roomsPrices[index] = room;
                     index++;

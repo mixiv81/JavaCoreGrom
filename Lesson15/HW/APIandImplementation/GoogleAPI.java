@@ -12,7 +12,7 @@ public class GoogleAPI implements API {
         Room room1 = new Room(price, persons, city, hotel);
         int countedArrInd = 0;
         for (Room room : rooms) {
-            if (room1.equals(room) && room1.hashCode() == room.hashCode()) {
+            if (room != null && room1.equals(room) && room1.hashCode() == room.hashCode()) {
                     countedArrInd++;
                 }
             }
@@ -20,7 +20,7 @@ public class GoogleAPI implements API {
         Room[] roomsParam = new Room[countedArrInd];
         int index = 0;
         for (Room room : rooms) {
-            if (room1.equals(room) && room1.hashCode() == room.hashCode()) {
+            if (room != null && room1.equals(room) && room1.hashCode() == room.hashCode()) {
                     roomsParam[index] = room;
                     index++;
                 }
